@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lap Comparison and Race Results</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Lap Comparison and Race Results</h1>
+            <p>Compare the performance of two drivers on the track.</p>
+            <a href="#lap-time-table" class="cta-button">View Lap Time Comparison</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Lap Time Comparison</h1>
+
+        <h2>Fastest Lap Sector Times</h2>
+        <table class="lap-time-table">
+            <thead>
+                <tr>
+                    <th>Driver</th>
+                    <th>Sector 1 (s)</th>
+                    <th>Sector 2 (s)</th>
+                    <th>Sector 3 (s)</th>
+                    <th>Total Lap Time (s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lap in lap_times %}
+                <tr>
+                    <td>
+                        <span class="driver-abbreviation" style="color: {{ lap['Color'] }};">{{ lap['Driver'] }}</span>
+                    </td>
+                    <td>{{ "%.3f" | format(lap['Sector 1 (s)']) }}</td>
+                    <td>{{ "%.3f" | format(lap['Sector 2 (s)']) }}</td>
+                    <td>{{ "%.3f" | format(lap['Sector 3 (s)']) }}</td>
+                    <td>{{ "%.3f" | format(lap['Total Lap Time (s)']) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Driver Standings Section -->
+    <section class="driver-standings">
+        <div class="container">
+            <h2>Driver Standings</h2>
+            <div class="podium">
+                {% for driver in podium %}
+                <div class="podium-item" style="background-color: {{ driver['Color'] }};">
+                    <div class="position">{{ driver['Position'] }}</div>
+                    <div class="driver">{{ driver['Driver'] }}</div>
+                    <div class="team">{{ driver['Team'] }}</div>
+                    <div class="points">{{ driver['Points'] }} PTS</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <h3>Other Drivers</h3>
+            <table class="other-drivers">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Driver</th>
+                        <th>Team</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for driver in other_drivers %}
+                    <tr>
+                        <td>{{ driver['Position'] }}</td>
+                        <td>
+                            <span class="driver-abbreviation" style="color: {{ driver['Color'] }};">{{ driver['Driver'] }}</span>
+                        </td>
+                        <td>{{ driver['Team'] }}</td>
+                        <td>{{ driver['Points'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 F1 Analytics. All rights reserved.</p>
+            <a href="/" class="back-button">Back to Home</a>
+        </div>
+    </footer>
+
+    <script>
+        // Parse the graphJSON data
+        var graphJSON = {{ graphJSON | safe }};
+
+        // Render the Plotly graph
+        Plotly.newPlot('track-dominance-graph', graphJSON.data, graphJSON.layout);
+    </script>
+</body>
+</html>
