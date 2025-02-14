@@ -1,0 +1,299 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    color:#dcdbdb;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    background-image: url('mpty-racing-track-with-illuminated-lights-in-night-empty-racing-track-with-empty-grandstand-or-bleacher-seats-realistic-racecourse-view-with-track-lights-or-stadium-lights-free-photo (1).jpg'); /* Updated path */
+    background-size: cover; /* Ensure the image covers the whole background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(17, 11, 11, 0.9); /* Semi-transparent white background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    
+    h1 {
+        margin-bottom: 20px;
+        color: #f8f5f5;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #faf9f9;
+    }
+    
+    select, button {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #252525;
+        border-radius: 4px;
+        font-size: 16px;
+    }   
+    button {
+        background-color: #0b1e33;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+    } 
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background:rgba(0, 0, 0, 0); /* Semi-transparent overlay */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #868686;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #b15625;
+    transform: translateY(-3px);
+}
+
+/* Lap Time Table */
+.lap-time-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgb(53, 53, 53);
+    box-shadow: 0 4px 8px rgba(251, 251, 251, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lap-time-table th, .lap-time-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #2e0244;
+}
+
+.lap-time-table th {
+    background-color: #111111;
+    font-weight: 600;
+}
+
+.lap-time-table tr:hover {
+    transform: translateX(+10px);
+    background-color: #2a2929;
+    box-shadow: 0 4px 8px rgba(251, 251, 251, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.driver-abbreviation {
+    font-weight: bold;
+}
+
+/* Back Button */
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+/* Driver Standings Section */
+.driver-standings {
+    padding: 80px 0;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent white background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.driver-standings h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+    
+}
+
+.driver-standings h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Podium Styles */
+.podium {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.podium-item {
+    flex: 1;
+    max-width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color:#747373;
+    text-align: center;
+    color:#BD8B28;
+    box-shadow: 0 4px 8px rgba(237, 236, 236, 0.823);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podium-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.podium-item .position {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.podium-item .driver {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.podium-item .team {
+    font-size: 16px;
+    margin: 10px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.podium-item .points {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Other Drivers Table */
+.other-drivers {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgb(53, 49, 59);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.other-drivers th, .other-drivers td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #b0aeae;
+}
+
+.other-drivers th {
+    background-color: #19075b;
+    font-weight: 600;
+}
+
+.other-drivers tr:hover {
+    background-color: #083a80;
+}
+
+.driver-abbreviation {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    padding: 40px 0;
+    background-color: rgba(0, 0, 0, 0.);
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .podium {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .podium-item {
+        max-width: 100%;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .driver-standings h2 {
+        font-size: 2rem;
+    }
+
+    .driver-standings h3 {
+        font-size: 1.5rem;
+    }
+}
