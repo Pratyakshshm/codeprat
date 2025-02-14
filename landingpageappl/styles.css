@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Make footer stick to the bottom */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* Apple Header */
+.apple-header {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+.apple-header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.apple-header nav ul li {
+    margin: 0 10px;
+    position: relative; /* Ensures dropdown is positioned relative to parent */
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Positions it directly below the parent item */
+    left: 0;
+    background-color: #a5a5a5;
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.866);
+    min-width: 200px;
+    border-radius: 5px;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    display: block;
+    color: #232323;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #a5a5a5;
+    color: #ffffff;
+}
+
+/* Show dropdown on hover */
+.apple-header nav ul li:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/6227297.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 60px; /* Prevent overlap with header */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: #0070c9;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #838383;
+    
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: url('images/6227297.jpg') no-repeat center center/cover;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    flex: 1 1 300px;
+    margin: 1rem;
+    text-align: center;
+}
+
+.feature-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    background: #000; /* Adjust background if needed */
+    color: white;
+    border-radius: 10px;
+}
+/* 
+.feature-item img {
+    max-width: 100%;
+    height: auto;
+} */
+
+.feature-item .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0071e3; /* Apple's blue color */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    color: white;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%;
+    position: relative;
+}
+/* Style for search dropdown */
+.search-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px; /* Adjust position below the icon */
+    right: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 200px;
+    z-index: 1000;
+  }
+  
+  .search-dropdown input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-dropdown button {
+    padding: 5px 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-dropdown button:hover {
+    background: #0056b3;
+  }
+  /* Menu Container */
+.menu-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    font-size: 24px;
+    padding: 10px;
+    color: white;
+    background: black;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu (Hidden by Default) */
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: black;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 180px;
+}
+
+/* Dropdown Links */
+.menu-dropdown a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.menu-dropdown a:hover {
+    background: gray;
+}
+
+/* Show dropdown on hover */
+.menu-container:hover .menu-dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Product Card Styling */
+.product-card {
+    text-align: center;
+    background: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* iPhone Image */
+#iphone-image {
+    width: 250px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Color Options Container */
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Individual Color Circles */
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Hover & Active Effect */
+.color-circle:hover, .color-circle.active {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Assign Colors */
+.black { background: rgb(30, 30, 30); }
+.white { background: white; }
+.blue { background: #1b223e; }
+.gold { background: #866e2e; }
+
+.color-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.color-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+.color-circle:hover {
+    transform: scale(1.1);
+}
+.color-circle.active {
+    border: 2px solid white;
+    transform: scale(1.2);
+}
