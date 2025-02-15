@@ -1,0 +1,7 @@
+This project is a visually appealing and interactive product showcase for Apple devices, including iPhone, iPad, and MacBook.
+The website features a sleek dark theme with smooth animations using GSAP for elements such as the footer and dropdown menus. 
+Users can seamlessly switch between different color variants of products with a fade transition effect, ensuring a smooth user experience. 
+The dropdown menus for iPhone, iPad, MacBook, and the main menu all follow a consistent style for a uniform look and feel. 
+Additionally, the Apple logo in the navigation bar functions as a home button, smoothly scrolling the user back to the top of the page when clicked. 
+The project is built with HTML, CSS, and JavaScript, incorporating GSAP for animations and event-driven interactions.
+This ensures a modern and dynamic interface that enhances user engagement. 
